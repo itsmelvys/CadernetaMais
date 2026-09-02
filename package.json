@@ -2,6 +2,7 @@
   "name": "cadernetamais",
   "main": "expo-router/entry",
   "version": "1.0.0",
+  "license": "none",
   "dependencies": {
     "@expo/ui": "~57.0.15",
     "expo": "~57.0.19",

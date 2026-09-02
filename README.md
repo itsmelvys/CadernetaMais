@@ -1,56 +1,65 @@
-# Welcome to your Expo app 👋
+# Caderneta+
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+App de acompanhamento da saúde da criança — vacinas, consultas e aquele “caderninho” que a gente sempre esquece em casa. A ideia é ter a caderneta no celular, com um visual calmo (verde-água, branco) e um fluxo simples de usar.
 
-## Get started
+Ainda está no começo. Hoje o que existe de verdade é a **tela de Início** (logo, ilustração, a frase *Cuidado e proteção em cada fase.*, botão **Começar** e o link **Já tenho uma conta**). Cadastro, login e o restante das telas ainda vão entrar.
 
-1. Install dependencies
+Se você está estudando o código junto comigo, tem um passo a passo bem miudinho da primeira tela em [`docs/explicacao-tela-inicio.md`](docs/explicacao-tela-inicio.md).
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## O que o app pretende ser
 
-   ```bash
-   npx expo start
-   ```
+- Guardar o perfil da criança (nome, data de nascimento, etc.)
+- Acompanhar vacinas e próximas doses
+- Ter um “home” com o que importa no dia a dia
 
-In the output, you'll find options to open the app in a
+Por enquanto, **Começar** e **Já tenho uma conta** só abrem um aviso. Não tem tela seguinte ainda — e tudo bem, uma coisa de cada vez.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Como rodar
 
-## Get a fresh project
-
-When you're ready, run:
+Precisa de [Node.js](https://nodejs.org/) e, no celular, o app [Expo Go](https://expo.dev/go) ajuda bastante.
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+No terminal aparece um QR code. Aí você escolhe:
 
-### Other setup steps
+| Tecla | O que faz |
+| --- | --- |
+| `a` | Abre no emulador Android |
+| `i` | Abre no simulador iOS (Mac) |
+| `w` | Abre no navegador |
+| Expo Go | Lê o QR code no celular |
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+No **web**, o layout fica num quadro no tamanho de celular (mais ou menos 390×844), para não esticar numa janela enorme. No aparelho de verdade, ocupa a tela toda.
 
-## Learn more
+Se algo quebrar no `npm install`, fecha o terminal, abre de novo na pasta do projeto e tenta outra vez. Acontece.
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Onde mexer
 
-## Join the community
+O Expo Router olha a pasta `src/app`. O arquivo `index.jsx` é a primeira tela que abre.
 
-Join our community of developers creating universal apps.
+```
+src/app/_layout.jsx     → casca do app (navegação, quadro no web)
+src/app/index.jsx       → tela Início
+assets/images/          → ilustração e ícones
+docs/                   → explicação da tela, se quiser estudar
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+A tela está em **JavaScript** (`.jsx`), de propósito: mais fácil de ler no começo. Tem TypeScript solto em arquivos antigos do template; pode ignorar por enquanto.
+
+---
+
+## Licença
+
+Este projeto não possui licença de código aberto.
+
+Todos os direitos são reservados à autora. Não é permitida a cópia,
+modificação, distribuição ou utilização deste código sem autorização prévia.
